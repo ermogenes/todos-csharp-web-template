@@ -6,9 +6,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
-// Swagger
 if (app.Environment.IsDevelopment())
 {
+    // Swagger
     app.UseSwagger();
     app.UseSwaggerUI();
 }
