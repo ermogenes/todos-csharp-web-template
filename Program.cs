@@ -8,11 +8,17 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
+
     // Swagger
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.MapGet("/", () => "Hello World!");
+// Aplicação Frontend
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+app.MapGet("/api/hello", () => "Hello World!");
 
 app.Run();
